@@ -2,16 +2,20 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+### ⚠️ Enforced pnpm
+
+This project requires pnpm as the single supported package manager. Remove other lockfiles and use pnpm to install and run scripts. See [CONTRIBUTING.md](CONTRIBUTING.md) for details and CI checks.
+
+If this is your first time, install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+```
+
+Then start the development server:
+
+```bash
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
