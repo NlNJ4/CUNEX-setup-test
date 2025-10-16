@@ -8,7 +8,7 @@ import * as React from "react";
 
 type TextFieldProps = React.ComponentProps<"input"> & {
   supportingText?: string | React.ReactNode;
-  endIcon?: React.ReactNode;
+  endButton?: React.ReactNode;
   error?: boolean;
   inputClassName?: string;
 };
@@ -22,7 +22,7 @@ const TextField: StyleableFC<TextFieldProps> = React.forwardRef<
       className,
       inputClassName,
       supportingText,
-      endIcon,
+      endButton,
       error,
       ...props
     },
@@ -36,7 +36,7 @@ const TextField: StyleableFC<TextFieldProps> = React.forwardRef<
             type="text"
             ref={ref}
             className={cn(
-              "w-full my-[0.5rem] mx-4",
+              "w-full my-2 mx-4",
 
               // error state styles
               error
@@ -50,17 +50,17 @@ const TextField: StyleableFC<TextFieldProps> = React.forwardRef<
             {...props}
           />
 
-          {/* if there is an end icon */}
-          {endIcon && (
-            <div className="items-center ">
-              {endIcon}
+          {/* if there is an end button */}
+          {endButton && (
+            <div className="items-center">
+              {endButton}
             </div>
           )}
         </div>
 
         {/* if there is supporting text */}
         {supportingText && (
-          <p className={cn("body-small-primary mx-1 ml-4 my-[0.25rem]", error ? "text-error" : "text-[#49454F]")}>
+          <p className={cn("body-small-primary mx-1 ml-4 my-1", error ? "text-error" : "text-[#49454F]")}>
             {supportingText}
           </p>
         )}

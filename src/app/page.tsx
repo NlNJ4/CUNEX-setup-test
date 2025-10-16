@@ -25,7 +25,7 @@ export default function Home() {
       <TextField placeholder="Placeholder" />
       <TextField supportingText="supporting text ..." placeholder="Placeholder" />
       <TextField error supportingText="error ..." placeholder="Placeholder" />
-      <TextField endIcon={<span>icon</span>} placeholder="Placeholder" />
+      <TextField endButton={<Button mode="filled" bordered="square" expanded={false} className="rounded-l-none">Button</Button>} placeholder="Placeholder" />
       <GroupFilterButton
         options={[
           { value: 'option1', label: 'Option 1' },
