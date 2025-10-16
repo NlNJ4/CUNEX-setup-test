@@ -33,6 +33,7 @@ const TextField: StyleableFC<TextFieldProps> = React.forwardRef<
         
         <div className="flex w-full items-center rounded-lg border border-neutral-400 bg-white gap-1">
           <input
+            type="text"
             ref={ref}
             className={cn(
               "w-full my-[0.5rem] mx-4",

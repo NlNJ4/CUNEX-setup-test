@@ -1,4 +1,5 @@
 import Button from "@components/Button";
+import GroupFilterButton from "@components/GroupFilterButton";
 import TextField from "@components/TextField";
 export default function Home() {
   return (
@@ -21,10 +22,18 @@ export default function Home() {
       <Button mode="outline" bordered="round" expanded={true}>
         Label
       </Button>
-      <TextField placeholder="type somthing..."/>
-      <TextField supportingText="supporting text ..." placeholder="type somthing..."/>
-      <TextField error supportingText="error ..." placeholder="type somthing..."/>
-      <TextField endIcon={<span>icon</span>} placeholder="type somthing..."/>
+      <TextField placeholder="Placeholder" />
+      <TextField supportingText="supporting text ..." placeholder="Placeholder" />
+      <TextField error supportingText="error ..." placeholder="Placeholder" />
+      <TextField endIcon={<span>icon</span>} placeholder="Placeholder" />
+      <GroupFilterButton
+        options={[
+          { value: 'option1', label: 'Option 1' },
+          { value: 'option2', label: 'Option 2' },
+        ]}
+        value="option1"
+      /> 
+
     </div>
   );
 }
