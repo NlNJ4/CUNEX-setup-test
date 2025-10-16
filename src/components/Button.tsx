@@ -4,19 +4,19 @@ import cn from "@utils/cn";
 import { StyleableFC } from "@utils/misc";
 import type { MouseEvent } from "react";
 
-type mode = "filled" | "outlined" | "text" | "icon";
-type bordered = "squared" | "rounded";
+type mode = "filled" | "outline" | "text" | "icon";
+type bordered = "square" | "round";
 
 const getPropsByMode: Record<mode, string> = {
   filled: "bg-primary text-white ",
-  outlined: "border border-primary text-primary text-black",
+  outline: "bg-neutral-white border border-primary text-black",
   text: "text-primary",
   icon: "p-2",
 };
 
 const getPropsByBordered: Record<bordered, string> = {
-  squared: "rounded-lg",
-  rounded: "rounded-full",
+  square: "rounded-lg",
+  round: "rounded-full",
 };
 
 const getPropsByExpanded = (expanded: boolean) => (expanded ? "w-full" : "");
@@ -42,7 +42,7 @@ const Button: StyleableFC<ButtonProps> = ({
   return (
     <button
       className={cn(
-        "relative justify-center items-center px-4 py-2.5",
+        "relative justify-center items-center px-4 py-2.5 font-label-large-emphasized",
         getPropsByBordered[bordered],
         getPropsByMode[mode],
         getPropsByExpanded(expanded),
