@@ -1,3 +1,5 @@
+'use client';
+
 import cn from "@utils/cn";
 import { StyleableFC } from "@utils/misc";
 import type { MouseEvent } from "react";
@@ -6,15 +8,15 @@ type mode = "filled" | "outlined" | "text" | "icon";
 type bordered = "squared" | "rounded";
 
 const getPropsByMode: Record<mode, string> = {
-  filled: "bg-primary text-white hover:bg-primary/90",
-  outlined: "border border-primary text-primary hover:bg-primary/50",
-  text: "text-primary hover:bg-primary/50",
+  filled: "bg-primary text-white ",
+  outlined: "border border-primary text-primary text-black",
+  text: "text-primary",
   icon: "p-2",
 };
 
 const getPropsByBordered: Record<bordered, string> = {
-  squared: "rounded-none",
-  rounded: "rounded-lg",
+  squared: "rounded-lg",
+  rounded: "rounded-full",
 };
 
 const getPropsByExpanded = (expanded: boolean) => (expanded ? "w-full" : "");
