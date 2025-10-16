@@ -42,7 +42,7 @@ const Button: StyleableFC<ButtonProps> = ({
   return (
     <button
       className={cn(
-        "relative justify-center items-center px-4 py-2.5 font-label-large-emphasized",
+        "relative justify-center items-center px-4 py-2.5 label-large-emphasized",
         getPropsByBordered[bordered],
         getPropsByMode[mode],
         getPropsByExpanded(expanded),
