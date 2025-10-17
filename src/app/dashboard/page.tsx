@@ -16,17 +16,18 @@ const DashboardPage = () => {
 //   this is just a mockup
   return (
     <div className="flex w-full min-h-screen flex-col items-center bg-neutral-100 p-4 md:p-8">
-      <div className="container max-w-4xl space-y-6 flex flex-col items-center">
+      {/* <div className="container max-w-4xl space-y-6 flex flex-col items-center border border-black"> */}
+      <div className="container space-y-6 flex flex-col items-center bg-neutral-white border border-black">
         <nav className="flex justify-center w-auto">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={cn(
-                'px-16 py-2 text-base font-semibold transition-colors duration-200',
+                'px-4 md:px-16 py-2 transition-colors duration-200 border-b-2',
                 activeTab === tab.id
-                  ? 'border-b-2 border-primary text-primary'
-                  : 'border-b-2 border-transparent text-neutral-600 hover:text-primary'
+                  ? 'border-primary text-primary'
+                  : 'border-transparent text-neutral-600 hover:text-primary'
               )}
             >
               <p className='headline-large-emphasized'>{tab.label}</p>

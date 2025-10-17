@@ -1,4 +1,5 @@
 import Button from "@components/Button";
+import { ChartPieLabel } from "@components/ChartPieLabel";
 import React from "react";
 
 const InsightsTab = () => {
@@ -22,22 +23,29 @@ const InsightsTab = () => {
           </Button>
         </div>
       </div>
-      <div className="w-full rounded-xl border border-neutral-200 bg-white">
-        <div className="rounded-lg p-8 bg-primary text-neutral-white shadow-elevation-3">
-          <div className="flex justify-center items-end">
-            <p className="text-center text-6xl font-bold ">1096</p>
-            <p className="text-center text-lg">คน</p>
-          </div>
 
-          <p className="title-large-emphasized mt-2 text-center">
-            จำนวนผู้เข้าร่วมกิจกรรมทั้งหมด
-          </p>
-          <div className="mt-4 flex justify-center gap-6 text-sm">
-            <span className="headline-medium-emphasized">นิสิต: 1090 คน</span>
-            <span className="headline-medium-emphasized">บุคลากร: 6 คน</span>
+      {/* mock up */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 rounded-xl border border-neutral-200 bg-white">
+        <div className="w-full rounded-xl border border-neutral-200 bg-white">
+          <div className="flex flex-col justify-center rounded-lg h-full p-8 bg-primary text-neutral-white shadow-elevation-3">
+            <div className="flex justify-center items-end">
+              <p className="text-center text-6xl font-bold ">1096</p>
+              <p className="text-center text-lg">คน</p>
+            </div>
+
+            <p className="title-large mt-2 text-center">
+              จำนวนผู้เข้าร่วมกิจกรรมทั้งหมด
+            </p>
+            <div className="mt-4 flex justify-center gap-6 text-sm">
+              <span className="headline-small-emphasized">นิสิต: 1090 คน</span>
+              <span className="headline-small-emphasized">บุคลากร: 6 คน</span>
+            </div>
           </div>
         </div>
+        <ChartPieLabel />
+        
       </div>
+
       <p className="headline-large-emphasized">
         สถิติการลงทะเบียนแยกตามคณะ/หน่วยงาน
       </p>
@@ -50,12 +58,12 @@ const InsightsTab = () => {
             <p className="text-center text-lg">คน</p>
           </div>
 
-          <p className="title-large-emphasized mt-2 text-center">
+          <p className="title-large mt-2 text-center">
             จำนวนผู้เข้าร่วมกิจกรรมทั้งหมด
           </p>
           <div className="mt-4 flex justify-center gap-6 text-sm">
-            <span className="headline-medium-emphasized">นิสิต: 1090 คน</span>
-            <span className="headline-medium-emphasized">บุคลากร: 6 คน</span>
+            <span className="headline-small-emphasized">นิสิต: 1090 คน</span>
+            <span className="headline-small-emphasized">บุคลากร: 6 คน</span>
           </div>
         </div>
       </div>
@@ -72,12 +80,12 @@ const InsightsTab = () => {
             <p className="text-center text-lg">คน</p>
           </div>
 
-          <p className="title-large-emphasized mt-2 text-center">
+          <p className="title-large mt-2 text-center">
             จำนวนผู้เข้าร่วมกิจกรรมทั้งหมด
           </p>
           <div className="mt-4 flex justify-center gap-6 text-sm">
-            <span className="headline-medium-emphasized">นิสิต: 1090 คน</span>
-            <span className="headline-medium-emphasized">บุคลากร: 6 คน</span>
+            <span className="headline-small-emphasized">นิสิต: 1090 คน</span>
+            <span className="headline-small-emphasized">บุคลากร: 6 คน</span>
           </div>
         </div>
       </div>
@@ -85,6 +93,7 @@ const InsightsTab = () => {
       <Button mode="filled" bordered="square" expanded={false}>
         เปรียบเทียบสถิติการลงทะเบียนเข้าร่วมกิจกรรม
       </Button>
+      
     </div>
   );
 };
