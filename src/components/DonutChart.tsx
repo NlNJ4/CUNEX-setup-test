@@ -50,7 +50,7 @@ export function DonutChart() {
           <PieChart>
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent hideLabel />}
+              content={<ChartTooltipContent  />}
             />
             <Pie
               data={chartData}

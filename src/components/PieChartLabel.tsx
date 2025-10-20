@@ -65,6 +65,7 @@ export function PieChartLabel() {
               dataKey="visitors" 
               label={({ payload }) => payload.browser} 
               nameKey="browser"
+              
             
             />  
           </PieChart>

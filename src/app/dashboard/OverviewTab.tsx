@@ -1,6 +1,6 @@
 import Button from "@components/Button";
-import { ChartBarOverview } from "@components/ChartBarOverView";
-import { ChartBarVertical } from "@components/ChartBarVertical";
+import { ChartBarHorizontalOverview } from "@components/ChartBarHorizontalOverView";
+import { ChartBarVerticalOverview } from "@components/ChartBarVerticalOverView";
 import React from "react";
 
 const OverviewTab = () => {
@@ -51,12 +51,12 @@ const OverviewTab = () => {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="space-y-6">
           <p className="headline-large-emphasized">
             3 อันดับแรกของคณะ/หน่วยงานที่ลงทะเบียน
           </p>
-          <ChartBarVertical />
+          <ChartBarVerticalOverview />
           <Button mode="filled" bordered="square" expanded={false}>
             ดูทั้งหมด
           </Button>
@@ -66,7 +66,7 @@ const OverviewTab = () => {
           <p className="headline-large-emphasized">
             สถิติการลงทะเบียนแยกตามช่วงเวลา
           </p>
-          <ChartBarOverview />
+          <ChartBarHorizontalOverview />
         </div>
       </section>
     </div>

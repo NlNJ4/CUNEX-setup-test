@@ -4,8 +4,10 @@ import { ChartBarMultipleHorizontal } from "@components/ChartBarMultipleHorizont
 import { ChartBarMultipleVertical } from "@components/ChartBarMultipleVertical";
 import { ChartBarVertical } from "@components/ChartBarVertical";
 import { DonutChart } from "@components/DonutChart";
+import { PieChartStacked } from "@components/PieChartStacked";
 import React from "react";
-import { PieChartLabel } from "@components/PieChart";
+import { PieChartLabel } from "@components/PieChartLabel";
+
 
 const InsightsTab = () => {
   return (
@@ -47,7 +49,7 @@ const InsightsTab = () => {
             </div>
           </div>
         </div>
-        <PieChartLabel />
+        <DonutChart />
       </div>
 
       <section className="flex flex-col space-y-8">
@@ -77,7 +79,11 @@ const InsightsTab = () => {
       </section>
 
       <section className="flex flex-col space-y-8">
-        <DonutChart />
+        <PieChartStacked />
+      </section>
+
+      <section className="flex flex-col space-y-8">
+        <PieChartLabel />
       </section>
 
       <Button mode="filled" bordered="square" expanded={false}>
