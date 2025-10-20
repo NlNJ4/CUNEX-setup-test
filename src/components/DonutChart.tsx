@@ -14,16 +14,16 @@ import {
 export const description = "A donut chart with text";
 
 const chartData = [
-  {
-    type: "จำนวนผู้ที่ลงทะเบียนเข้าร่วมกิจกรรม",
-    total: 500,
-    fill: "var(--color-primary)",
-  },
-  {
-    type: "จำนวนผู้ที่ยังไม่ได้ลงทะเบียนเข้าร่วมกิจกรรม",
-    total: 100,
-    fill: "var(--color-gray-300)",
-  },
+    {
+        category: "จำนวนผู้ที่ลงทะเบียนเข้าร่วมกิจกรรม",
+        total: 500,
+        fill: "var(--color-primary)",
+    },
+    {
+        category: "จำนวนผู้ที่ยังไม่ได้ลงทะเบียนเข้าร่วมกิจกรรม",
+        total: 100,
+        fill: "var(--color-gray-300)",
+    },
 ];
 
 const chartConfig = {
@@ -34,16 +34,18 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export function DonutChart() {
-  const totalVisitors = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.total, 0);
+  const registeredPercent = React.useMemo(() => {
+    const total = chartData.reduce((acc, curr) => acc + curr.total, 0);
+    const registered = chartData[0].total;
+    return ((registered / total) * 100).toFixed(0);
   }, []);
 
   return (
-    <Card className="flex flex-col">
-      <CardContent className="flex-1 pb-0">
+    <Card className="flex flex-col py-0">
+      <CardContent className="flex-1 pb-0 ">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square max-h-[250px]"
+          className="mx-auto aspect-square max-h-[400px] p-0"
         >
           <PieChart>
             <ChartTooltip
@@ -53,11 +55,15 @@ export function DonutChart() {
             <Pie
               data={chartData}
               dataKey="total"
-              nameKey="type"
-              innerRadius={50}
-              strokeWidth={5}
-              label
+              nameKey="category"
+              innerRadius={90}
+              strokeWidth={4}
               labelLine={{ strokeWidth: 2 }}
+              width={280}
+              height={280}
+              label={({ name, value, percent }) => {
+                return `${name}: ${value} (${(percent * 100).toFixed(0)}%)`;
+              }}
             >
               <Label
                 content={({ viewBox }) => {
@@ -68,20 +74,14 @@ export function DonutChart() {
                         y={viewBox.cy}
                         textAnchor="middle"
                         dominantBaseline="middle"
+                        className="headline-large-emphasized"
                       >
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold"
+                          className="fill-primary"
                         >
-                          {totalVisitors.toLocaleString()}
-                        </tspan>
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground"
-                        >
-                          Visitors
+                          {registeredPercent.toLocaleString()}%
                         </tspan>
                       </text>
                     );
