@@ -15,9 +15,8 @@ const DashboardPage = () => {
 
 //   this is just a mockup
   return (
-    <div className="flex w-full min-h-screen flex-col items-center bg-neutral-100 p-4 md:p-8">
-      {/* <div className="container max-w-4xl space-y-6 flex flex-col items-center border border-black"> */}
-      <div className="container space-y-6 flex flex-col items-center bg-neutral-white border border-black">
+    <div className="flex flex-col items-center w-full min-h-screen p-4 md:p-8 bg-neutral-white">
+      <div className="container max-w-[1440px] space-y-6 flex flex-col items-center bg-neutral-white ">
         <nav className="flex justify-center w-auto">
           {tabs.map((tab) => (
             <button
@@ -35,7 +34,7 @@ const DashboardPage = () => {
           ))}
         </nav>
 
-        <div className="w-full border border-black">
+        <div className="w-full ">
           {activeTab === 'overview' ? <OverviewTab /> : <InsightsTab />}
         </div>
       </div>

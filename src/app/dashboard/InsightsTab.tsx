@@ -1,6 +1,11 @@
 import Button from "@components/Button";
-import { ChartPieLabel } from "@components/ChartPieLabel";
+import { ChartBarHorizontal } from "@components/ChartBarHorizontal";
+import { ChartBarMultipleHorizontal } from "@components/ChartBarMultipleHorizontal";
+import { ChartBarMultipleVertical } from "@components/ChartBarMultipleVertical";
+import { ChartBarVertical } from "@components/ChartBarVertical";
+import { DonutChart } from "@components/DonutChart";
 import React from "react";
+import { PieChartLabel } from "@components/PieChart";
 
 const InsightsTab = () => {
   return (
@@ -42,58 +47,42 @@ const InsightsTab = () => {
             </div>
           </div>
         </div>
-        <ChartPieLabel />
-        
+        <PieChartLabel />
       </div>
 
-      <p className="headline-large-emphasized">
-        สถิติการลงทะเบียนแยกตามคณะ/หน่วยงาน
-      </p>
-
-      {/* mock */}
-      <div className="w-full rounded-xl border border-neutral-200 bg-white">
-        <div className="rounded-lg p-8 bg-neutral-100 text-neutral-black shadow-elevation-3">
-          <div className="flex justify-center items-end">
-            <p className="text-center text-6xl font-bold ">1096</p>
-            <p className="text-center text-lg">คน</p>
-          </div>
-
-          <p className="title-large mt-2 text-center">
-            จำนวนผู้เข้าร่วมกิจกรรมทั้งหมด
-          </p>
-          <div className="mt-4 flex justify-center gap-6 text-sm">
-            <span className="headline-small-emphasized">นิสิต: 1090 คน</span>
-            <span className="headline-small-emphasized">บุคลากร: 6 คน</span>
-          </div>
+      <section className="flex flex-col space-y-8">
+        <p className="headline-large-emphasized">
+          สถิติการลงทะเบียนแยกตามคณะ/หน่วยงาน
+        </p>
+        <div className="">
+          <ChartBarVertical />
         </div>
-      </div>
+      </section>
 
-      <p className="headline-large-emphasized">
-        สถิติการลงทะเบียนแยกตามช่วงเวลา
-      </p>
-
-      {/* mock */}
-      <div className="w-full rounded-xl border border-neutral-200 bg-white">
-        <div className="rounded-lg p-8 bg-neutral-100 text-neutral-black shadow-elevation-3">
-          <div className="flex justify-center items-end">
-            <p className="text-center text-6xl font-bold ">1096</p>
-            <p className="text-center text-lg">คน</p>
-          </div>
-
-          <p className="title-large mt-2 text-center">
-            จำนวนผู้เข้าร่วมกิจกรรมทั้งหมด
-          </p>
-          <div className="mt-4 flex justify-center gap-6 text-sm">
-            <span className="headline-small-emphasized">นิสิต: 1090 คน</span>
-            <span className="headline-small-emphasized">บุคลากร: 6 คน</span>
-          </div>
+      <section className="flex flex-col space-y-8">
+        <p className="headline-large-emphasized">
+          สถิติการลงทะเบียนแยกตามช่วงเวลา
+        </p>
+        <div>
+          <ChartBarHorizontal />
         </div>
-      </div>
+      </section>
+
+      <section className="flex flex-col space-y-8">
+        <ChartBarMultipleHorizontal />
+      </section>
+
+      <section className="flex flex-col space-y-8">
+        <ChartBarMultipleVertical />
+      </section>
+
+      <section className="flex flex-col space-y-8">
+        <DonutChart />
+      </section>
 
       <Button mode="filled" bordered="square" expanded={false}>
         เปรียบเทียบสถิติการลงทะเบียนเข้าร่วมกิจกรรม
       </Button>
-      
     </div>
   );
 };
